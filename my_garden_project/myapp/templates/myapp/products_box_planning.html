@@ -1,0 +1,20 @@
+
+<div class="planning-items-products">
+  {% for element in selection %}
+  <div class="item-product product-container" data-product="{{ element.produit.id }}">
+    <div class="item-title-product">{{ element.produit }}</div>
+    {% for event in events %}
+    {% if event.produit == element.produit %}
+    <div class="item-tab-icons">
+      <span class="pic {{ event.evenement }}">{{ event.evenement }}</span>
+      <span id="planningDate">{{ event.date_deb }}</span>
+      <span> au </span>
+      <span id="planningDate">{{ event.date_fin }}</span>
+      {% if event.evenement == "recolte" %}
+      <span>test</span>{% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>

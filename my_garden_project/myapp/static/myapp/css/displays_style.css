@@ -1,0 +1,142 @@
+
+/*----------------------------------------------------------------------------------*/
+/*                                    DISPLAY                                        */
+/*----------------------------------------------------------------------------------*/
+
+
+.display-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+}
+
+
+.page-link {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+
+    background-color: rgba(210, 210, 210);
+
+}
+
+.page-link.active {
+    background-color: rgba(67, 235, 149, .8);
+}
+
+
+
+/* filter_box */
+
+
+
+.display-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    box-shadow: inset 0px -1px 0px #c5c5c6;
+
+}
+
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(67,235, 149, .7);
+  padding: 5px 0px 5px 40px;
+
+  }
+
+  .display-header h1 {
+    margin-left: 40px;
+  }
+
+
+
+
+
+
+.form-control {
+    width: 180px;
+    height: 25px;
+    border: 0px;
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 10px;
+
+}
+
+.submit-section {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.filter input::placeholder {
+    color: black;
+}
+
+
+.filter-btn {
+    font-size: 1.3em;
+    border-radius: 5px;
+    border: 0px;
+    padding: 5px 10px;
+    background: white;
+    margin: 0 15px;
+    cursor: pointer;
+    height: 25px;
+}
+
+.reload-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    color; black;
+}
+
+
+/* query_none */
+
+.query-none {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.query-none img {
+    width: 200px;
+}
+
+
+
+
+@media screen and (max-width: 570px) {
+
+    .filter  {
+        padding: 5px;
+        justify-content: center;
+    }
+
+
+
+}

@@ -1,0 +1,81 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="display-page">
+
+
+    <div class="display-header">
+            <h1>My_Tricks</h1>
+
+                <form class="filter" method="get">
+                      <!--  {{ tricks_filter.form.id_produit.label_tag }} -->
+                        {% render_field tricks_filter.form.produit class="form-control" %}
+                    <div class="submit-section">
+                        <input type="submit" class="filter-btn" value="Filtrer">
+                        <a href="{% url 'myapp:tricks' %}" class="reload-btn"><i class="fa-solid fa-rotate-right"></i></a>
+                    </div>
+
+            </form>
+
+
+
+    </div>
+
+
+
+    <div class="display-cards">
+
+        {% if message %}
+    <div class="query-none">
+            <img class="logo-img" src="{% static 'myapp/icons/chou_blanc.png' %}" alt="logo" />
+            <h1>Chou Blanc !</h1>
+        <h2>{{message}}</h2>
+    </div>
+    {% endif %}
+
+
+
+
+    {% for trick in page_obj %}
+
+        <div class="card-trick">
+            {% if trick.image %}
+                 <img class="img-trick" src="{{trick.image.url}}"  alt="trick-img">
+            {% else %}
+                <img src="{% static 'myapp/images/produits/empty.png' %}" alt="empty-img">
+            {% endif %}
+                    <div class="header-trick">
+                        <div class="product-trick">{{trick.produit}}</div>
+                        <div class="title-trick">{{trick.nom}}
+                        <hr>
+                        </div>
+                    </div>
+                    <div class="info-trick" >{{trick.description}}
+                </div>
+                 <div class="btn-section">
+                <button data-trick={{trick.id}} data-action="add" class="button update-collection">Ajouter</button>
+            </div>
+
+        </div>
+            {% endfor %}
+    </div>
+
+    <div class="pagination">
+
+    {% for num_page in page_obj.paginator.page_range %}
+        {% if num_page > 0 %}
+           {% if page_obj.number == num_page %}
+           <a class="page-link active" href="{% url 'myapp:tricks' %}?page={{num_page}}"></a>
+           {% else %}
+           <a class="page-link" href="{% url 'myapp:tricks' %}?page={{num_page}}"></a>
+           {% endif %}
+        {% endif %}
+    {% endfor %}
+
+
+
+    </div>
+</div>
+{% endblock content %}

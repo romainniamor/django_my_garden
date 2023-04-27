@@ -1,0 +1,104 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+
+{% block content %}
+
+{% csrf_token %}
+
+
+
+<div class="display-page">
+
+    <div class="display-header">
+        <h1>My_Products</h1>
+            <form class="filter" method="get">
+
+                    {% render_field product_filter.form.nom class="form-control" %}
+                     {% render_field product_filter.form.saison class="form-control" %}
+
+                <div class="submit-section">
+                    <input type="submit" class="filter-btn" value="Filtrer">
+                     <a href="{% url 'myapp:products' %}" class="reload-btn"><i class="fa-solid fa-rotate-right"></i></a>
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="display-cards">
+
+
+        {% if message %}
+    <div class="query-none">
+            <img class="logo-img" src="{% static 'myapp/icons/chou_blanc.png' %}" alt="logo" />
+            <h1>Chou Blanc !</h1>
+        <h2>{{message}}</h2>
+    </div>
+    {% endif %}
+
+
+        {% for product in page_obj %}
+        <div class="card-product">
+            {% if product.image %}
+            <img src="{{product.image.url}}" alt="product-img">
+            {% else %}
+            <img src="{% static 'myapp/images/produits/empty.png' %}" alt="empty-img">
+            {% endif %}
+            <div class="title-product">{{product.nom}}
+                <hr>
+            </div>
+            <div class="tab-icons">
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-sun"></i></div>
+                    <span>{{product.besoin_soleil}}</span>
+                </div>
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+                    <span>{{product.besoin_eau}}</span>
+                </div>
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <span>{{product.saison}}</span>
+                </div>
+            </div>
+            <div class="info-card">{{product.description}}
+            </div>
+            <div class="btn-section">
+                <button data-product={{product.id}} data-action="add" class="button update-selection">Ajouter</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="pagination">
+
+    {% for num_page in page_obj.paginator.page_range %}
+        {% if num_page > 0 %}
+           {% if page_obj.number == num_page %}
+           <a class="page-link active" href="{% url 'myapp:products' %}?page={{num_page}}"></a>
+           {% else %}
+           <a class="page-link" href="{% url 'myapp:products' %}?page={{num_page}}"></a>
+           {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+

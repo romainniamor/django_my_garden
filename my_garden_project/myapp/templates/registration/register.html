@@ -1,0 +1,57 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+
+<form class="box-user" action="" method="POST">
+    {% csrf_token %}
+
+        <h1 class="box-user-title">S'inscrire.</h1>
+        <div class="box-element">
+          <div class="element">
+              {{user_form.username}}
+          </div>
+          <div class="element">
+              {{user_form.email}}
+          </div>
+             <div class="element">
+              {{ profile_form.as_p }}
+          </div>
+          <div class="element">
+              {{user_form.password1}}
+          </div>
+            <div class="element">
+                {{user_form.password2}}
+          </div>
+
+
+
+        </div>
+
+        <div class="box-validation">
+            <input class="button" type="submit" value="Valider"/>
+        </div>
+        <div class="box-link">
+          <a href="{% url 'myapp:login' %}"> Déja inscrit? Se connecter</a>
+        </div>
+        <br>
+
+        {% if user_form.errors %}
+        <ul class="box-error">
+            {% for field, errors in user_form.errors.items %}
+            {% for error in errors %}
+            <li class="error-form">{{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+      </div>
+
+</form>
+
+
+
+
+
+
+{% endblock content %}

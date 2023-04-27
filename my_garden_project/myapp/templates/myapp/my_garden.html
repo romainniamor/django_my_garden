@@ -1,0 +1,84 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="display-page">
+
+    <div class="display-header-garden">
+        <h1>My_Garden</h1>
+    </div>
+
+
+    <div class="display-body">
+
+        <div class="display-body-left">
+
+            {% if selection %}
+            <div class="selection">
+                {% include 'myapp/products_box_selection.html' %}
+            </div>
+            {% else %}
+
+            <div class="selection empty-selection">
+
+                <div class="icons">
+                    <div class="icon"><i class="fa-solid fa-sun"></i></div>
+                    <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                </div>
+                <h2>Votre selection est vide. Découvrez et sélectionnez vos fruits et légumes
+                    préférés.
+                </h2>
+                <div class="btn-section">
+                    <a class="button" href="{% url 'myapp:products' %}">Produits</a>
+                </div>
+
+            </div>
+            {% endif %}
+
+
+
+        </div>
+
+
+        <div class="display-body-right">
+            <div class="calendar">
+                {% include 'myapp/calendar.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="body-bottom">
+
+        {% if collection %}
+        <div class="collection">
+            {% include 'myapp/tricks_box_collection.html' %}
+        </div>
+        {% else %}
+        <div class="collection empty-collection">
+
+                <div class="icons">
+                    <div class="icon"><i class="fa-solid fa-bucket"></i></div>
+                    <div class="icon"><i class="fa-solid fa-carrot"></i></div>
+                    <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+                </div>
+                <h2>Votre collection est vide. Découvrez et sélectionnez vos astuces
+                    préférées.
+                </h2>
+                <div class="btn-section">
+                    <a class="button" href="{% url 'myapp:tricks' %}">Astuces</a>
+                </div>
+
+            </div>
+            {% endif %}
+
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock content %}

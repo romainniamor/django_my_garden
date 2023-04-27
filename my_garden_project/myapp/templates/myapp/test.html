@@ -1,0 +1,33 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block content %}
+
+
+
+<p>Profile de: {{profile.user}}</p>
+<p>le département de {{profile.user}} est: {{profile.departement.nom}}</p>
+<p>le climat de {{profile.user}} est: {{profile.departement.id_region.id_climat}}</p>
+
+
+<p>Voici les différents climats:</p>
+{% for climat in climat %}
+    <span>{{climat.nom}} / {{climat.id_climat}}
+    <hr></span>
+{% endfor %}
+<br>
+<p>Voici les différentes regions:</p>
+{% for region in regions %}
+    <span>{{region.nom}} / {{region.id_climat}}
+    <hr></span>
+{% endfor %}
+<br>
+<p>Voici les différents département:</p>
+{% for departement in departements %}
+    <span>{{departement.nom}} / {{departement.id_region.id_climat}}
+    <hr></span>
+{% endfor %}
+<br>
+
+
+{% endblock content %}

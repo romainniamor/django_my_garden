@@ -1,0 +1,39 @@
+{% load static %}
+<div class="item-product">
+    <h3 class="title-box-section ">My_Collection</h3>
+    <hr>
+
+</div>
+<div class="display-cards">
+
+    {% for element in collection %}
+
+    <div class="card-trick">
+        <img class="img-trick" src="{{element.conseil.image.url}}" alt="trick-img">
+        <div class="header-trick">
+            <div class="product-trick">{{ element.conseil.produit }}</div>
+            <div class="title-trick">{{ element.conseil.nom }}
+                <hr>
+            </div>
+        </div>
+        <div class="info-trick">{{ element.conseil.description }}
+        </div>
+        <div class="btn-section">
+            <div data-trick="{{ element.conseil.id }}" data-action="remove" class="update-collection delete-element"
+                 type="submit" onclick="updateCollection({{ element.conseil.id }}, 'remove')">X
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+

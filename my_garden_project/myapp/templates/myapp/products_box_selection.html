@@ -1,0 +1,70 @@
+<div class="item-product">
+    <h3 class="title-box-section ">My_Selection</h3>
+
+
+</div>
+<hr>
+
+
+<div class="items-products">
+    {% for element in selection %}
+
+    <div class="item-product" id="product-{{ element.produit.id }}">
+
+
+        <a data-product="{{ element.produit.id }}" class="update-planning item-title-product"
+           type="submit" onclick="updateCalendar({{ element.produit.id }});">{{element.produit}}</a>
+
+
+
+        <div class="item-tab-icons">
+            <div class="item-tab">
+                <div class="item-icon"><i class="fa-solid fa-sun"></i></div>
+                <span class="data-product">{{element.produit.besoin_soleil}}</span>
+            </div>
+            <div class="item-tab">
+                <div class="item-icon"><i class="fa-solid fa-droplet"></i></div>
+                <span class="data-product">{{element.produit.besoin_eau}}</span>
+            </div>
+            <div class="item-tab">
+                <div class="item-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <span class="data-product">{{element.produit.saison}}</span>
+            </div>
+
+        </div>
+        <div class="events">
+            {% for event in events %}
+            {% if event.produit.id == element.produit.id %}
+            <div class="item-tab" data-product="{{ event.produit.id }}">
+                <div class="items-events">
+                    <div class="item-event {{ event.evenement }}">{{ event.evenement }}</div>
+                </div>
+                <div class="data-event">
+                    <span> du </span>
+                    <span class="data-item">{{ event.date_deb }}</span>
+                    <span> au </span>
+                    <span class="data-item">{{ event.date_fin }}</span>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+       </div>
+
+        <div class="delete-section">
+            <div data-product="{{ element.produit.id }}" data-action="remove" class="update-selection delete-element"
+                    type="submit" onclick="updateSelection({{ element.produit.id }}, 'remove')">X
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% if selection|length == 0 %}
+    <div class="item-product">
+        <div class="item-tab">
+            <span>Votre sélection est vide.</span>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>

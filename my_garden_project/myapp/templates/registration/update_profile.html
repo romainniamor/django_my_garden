@@ -1,0 +1,41 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+
+
+
+    <form class="box-user" method="POST">
+        {% csrf_token%}
+
+        <h1 class="box-user-title">My_Profile.</h1>
+        <h2 class="box-user-subtitle">Modifier vos informations personnelles.</h2>
+        <br>
+
+
+        <div class="box-element">
+            <div class="element">
+                <h2 class="box-user-subtitle">Votre pseudo.</h2>
+                 {{ user_form.username }}
+            </div>
+            <div class="element">
+                <h2 class="box-user-subtitle">Votre email.</h2>
+                 {{ user_form.email }}
+            </div>
+           <div class="element">
+                <h2 class="box-user-subtitle">Votre département.</h2>
+                 {{ profile_form }}
+            </div>
+        </div>
+
+        <div class="box-validation">
+            <input class="button" type="submit" value="Modifier">
+        </div>
+        <div class="box-link">
+            <a href="../password/">Modiifer son mot de passe !</a>
+            <a href="#null" onclick="javascript:history.back();">Retour</a>
+            <a href="{% url 'myapp:delete_account' %}">Supprimer Compte</a>
+        </div>
+    </form>
+
+
+{% endblock content %}

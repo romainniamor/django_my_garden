@@ -1,0 +1,11 @@
+
+
+{% for profile in profiles %}
+
+<ul>
+  <li>Username: {{ profile.user.username }}</li>
+  <li>email: {{ profile.user.email }}</li>
+  <li>departement: {{ profile.departement }}</li>
+</ul>
+
+{% endfor %}

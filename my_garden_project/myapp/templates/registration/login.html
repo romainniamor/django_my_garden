@@ -1,0 +1,27 @@
+
+{% extends 'myapp/base.html' %}
+{% block content %}
+
+<form class="box-user" action="" method="POST">
+        {% csrf_token %}
+        <h1 class="box-user-title">Se Connecter.</h1>
+            <div class="box-element">
+                <div class="element">
+                    <input name="username" type="text" placeholder="Pseudo..." required ></div>
+                <div class="element">
+                    <input name = "password" type="password"  placeholder="Mot de passe..." required>
+                </div>
+            </div>
+
+
+            <div class="box-validation">
+                    <input class="button" type="submit" value="Valider">
+            </div>
+            <div class="box-link" >
+                <a href="{% url 'myapp:password_reset' %}">Mot de passe oublié? </a>
+                <a href="{% url 'myapp:register' %}"> Pas encore inscrit!</a>
+            </div>
+
+</form>
+
+{% endblock content %}

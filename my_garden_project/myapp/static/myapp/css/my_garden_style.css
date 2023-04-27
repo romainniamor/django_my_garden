@@ -1,0 +1,440 @@
+
+/* style du template my_garden.html */
+
+.display-header-garden {
+    justify-content: left;
+}
+
+.display-header-garden h1 {
+    margin-left: 40px;
+  }
+
+.display-body {
+    display: flex;
+    height: 75em;
+    overflow: scroll;
+    margin-bottom: 50px;
+
+}
+
+.display-body-left {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.display-body-right {
+    width: 60%;
+
+}
+
+/* my_selection */
+
+
+.selection {
+    margin: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 9px -1px rgba(181,181,181,0.81);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+
+}
+
+.title-box-section {
+    align-items: center;
+    padding: 10px;
+    font-size: 1.6em;
+   font-weight: 600;
+   margin: auto;
+}
+
+.items-products {
+    overflow: scroll;
+    height: 40em;
+}
+
+.planning-items-products.not filtered .item-product {
+  display: none;
+}
+
+
+
+.item-product {
+    display: flex;
+    align-items: center;
+    background: #f3f3f3;
+    min-height: 40px;
+    margin-bottom: 1px;
+    padding: 0 15px;
+    width: 100%;
+    position: relative;
+}
+
+.item-product:hover {
+  background-color: #f0f0f0;
+}
+
+.item-title-product {
+
+    font-size: 1.4em;
+    cursor: pointer;
+    padding-left: 5px;
+    width: 25%;
+    max-width: 100px;
+    font-weight: 0;
+}
+
+.item-tab-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: .9em;
+     width: 35%;
+     max-width: 150px;
+     gap: 10px;
+}
+
+
+.item-tab {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.item-tab:nth-child(3) {
+    width: 50%;
+}
+
+
+.events {
+    display: flex;
+    font-size: .9em;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.item-icon {
+  font-size: 1.2em;
+  margin: 0 3px;
+}
+
+.active-btn {
+  font-weight: 600;
+  transform: scale(1.01)
+}
+
+.items-events {
+    width: 70px;
+
+
+    display: flex;
+
+}
+
+  .item-event {
+     align-items: center;
+   padding: 2px 7px;
+    border-radius: 10px;
+    border: .1px solid gray;
+    font-size: 1.2em;
+    cursor: pointer;
+
+  }
+
+ .item-event plantation {
+    background: rgba(91, 60, 17, .5);
+
+ }
+
+ .item-event recolte {
+    background: rgb(67 235 149);
+  }
+
+  .data-event {
+    max-width: 190px;
+    font-size: .9em;
+    display: none;
+  }
+
+
+
+
+.delete-element {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+   font-size: 1.3em;
+   font-family: 'Courgette', cursive;
+   cursor: pointer;
+   padding: 5px;
+   background: white;
+   border-radius: 50%;
+   width: 25px;
+   height: 25px;
+   text-align: center;
+
+}
+
+.delete-element:hover {
+   font-weight: 600;
+   font-size: 1.4em;
+}
+
+
+
+
+.empty-selection .icons {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.empty-selection h2 {
+    font-size: 1.7em;
+    font-weight: 400;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.empty-selection .button {
+    margin: 30px 0 50px;
+}
+
+
+
+
+
+/* CALENDAR */
+
+  .calendar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: scroll;
+
+  }
+
+  .month {
+    width: 220px;
+    height: 220px;
+    background-color: #FBFCFA;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: .8em;
+    box-shadow: 6px 6px 9px -1px rgba(181,181,181,0.81);
+
+  }
+
+  .month h1 {
+    width: 100%;
+    background: #f3f3f3;
+    color: rgb(43, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 5px;
+    font-family: 'Courgette', cursive;
+  }
+
+  .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2em;
+    color: rgb(105, 105, 105);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .day {
+    display: flex;
+    font-size: 1em;
+    width: calc(24rem / 7);
+    justify-content: center;
+    height: 3em;
+    font-weight: 600;
+    align-items: center;
+    text-shadow: 0 0.3px 0.5px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+
+
+/* couleur des evenements planning et calendar section */
+  .event {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+  }
+
+.plantation {
+    bottom: 7px;
+    background: rgba(91, 60, 17, .5);
+  }
+
+ .recolte {
+    background: rgb(67 235 149);
+    bottom: 3px;
+  }
+
+  .pic {
+   padding: 2px 7px;
+    border-radius: 10px;
+    border: .1px solid gray;
+  }
+
+ .pic .plantation {
+    background: rgba(91, 60, 17, .5);
+
+ }
+
+ .pic .recolte {
+    background: rgb(67 235 149);
+  }
+
+
+.collection {
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 9px -1px rgba(181,181,181,0.81);
+    border-radius: 10px;
+
+
+}
+
+
+
+.collection .display-cards {
+
+  max-height: 540px;
+    overflow: scroll;
+    padding: 20px 0px;
+}
+
+
+.empty-collection .icons {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.empty-collection h2 {
+    font-size: 1.7em;
+    font-weight: 400;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.empty-collection .button {
+    margin: 30px 0 50px;
+}
+
+.empty-collection {
+    margin: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 6px 6px 9px -1px rgba(181,181,181,0.81);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 35%;
+    margin: 40px;
+}
+
+.inactive {
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 1300px) {
+
+.item-title-product {
+    min-width: 70px;
+    cursor: default;
+
+}
+
+.data-event {
+    display: block;
+     width: 200px;
+}
+
+.item-event {
+     cursor: default;
+}
+
+
+.display-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: none;
+    margin-bottom: 0px;
+    height: auto;
+
+}
+
+.display-body-left {
+    width: 100%;
+}
+
+.display-body-right {
+    display: none;
+}
+
+
+
+}
+
+@media screen and (max-width: 920px) {
+
+.item-product {
+    padding: 5px 0;
+}
+
+.item-tab-icons {
+    display: none;
+}
+
+.product-item {
+    height: auto;
+}
+
+.events {
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    gap: 3px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

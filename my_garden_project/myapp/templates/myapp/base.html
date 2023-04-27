@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>my_app</title>
+    <!-- IMPORT  -->
+    <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js"></script>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/index_style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/my_garden_style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/displays_style.css' %}">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONTS  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="{% static 'myapp/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'myapp/css/owl.theme.default.min.css' %}">
+
+    <script type="text/javascript">
+        let user = '{{request.user}}'
+
+    console.log('csrftoken')
+    //https://docs.djangoproject.com/en/4.1/howto/csrf/
+    function getToken(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken');
+    </script>
+</head>
+
+<header>
+    <nav>
+  <a href="{% url 'myapp:index' %}" class="nav-icon" aria-label="visit homepage" aria-current="page">
+    <img class="logo-img" src="{% static 'myapp/icons/logoApp.png' %}" alt="logo" />
+  </a>
+
+
+        {% if user.is_authenticated %}
+    <div class="nav-links-container">
+          <a href="{% url 'myapp:products' %}">Produits</a>
+          <a href="{% url 'myapp:tricks' %}">Astuces</a>
+          <a href="{% url 'myapp:my_garden' %}">Jardin</a>
+          <a href="{% url 'myapp:update_profile' %}">Mon Compte</a>
+          <a href="{% url 'myapp:logout' %}">Se Deconnecter</a>
+    </div>
+        {% else %}
+    <div class="nav-authentication">
+         <div class="sign-btns">
+        <a href="{% url 'myapp:login' %}">Se Connecter</a>
+        <a href="{% url 'myapp:register' %}">S'inscrire</a>
+      </div>
+      <a href="" class="sign-user" aria-label="Sign in page">
+        <img class="sign-img" src="{% static 'myapp/icons/conect.png' %}" alt="user-icon" />
+      </a>
+        {% endif %}
+        <a href="#" class="burger">
+      <img class="burger-img" src="{% static 'myapp/icons/menuBurger.png' %}" alt="burgerMenu" />
+    </a>
+
+    </div>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="modal">
+        <p class="message">{{ message }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+        <div class="add-message">
+            <p class="message"></p>
+        </div>
+
+
+
+</nav>
+
+</header>
+
+
+<body>
+<div class="content">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+
+
+<script src="{% static 'myapp/js/jquery.min.js' %}"></script>
+<script src="{% static 'myapp/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'myapp/js/script.js' %}"></script>
+<script src="{% static 'myapp/js/calendar.js' %}"></script>
+<script src="{% static 'myapp/js/productsSelection.js' %}">let user = '{{request.user}}'</script>
+<script src="{% static 'myapp/js/tricksSelection.js' %}">let user = '{{request.user}}'</script>
+
+
+
+
+</body>
+
+<footer>
+    <div class="display-footer">
+        <p class="copyright">Tous droits réservés © My_Garden_2023</p>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Termes et condition</a>
+        <div class="links">
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

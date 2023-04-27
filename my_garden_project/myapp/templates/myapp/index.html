@@ -1,0 +1,169 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero">
+
+        <div class="banner-info">
+            <h1>My_Garden</h1>
+            <p>Lorem ipsum dolor sit amet consectetur esse neque maiores soluta perspiciatis odit, eius ullam eos, iusto suscipit voluptatem
+            quasi. A dolorum  soluta perspiciatis odit, eius ullam noctar dolom enic presciti eos, ese la rolop justa des la iusto
+                suscipit voluptatem minima deleniti eno velemi sula toa sipa tropy.</p>
+            <a class="button" href="{% url 'myapp:my_garden' %}">Jardins</a>
+        </div>
+        <div class="banner-right">
+            <div class="item">
+                <div class="content">
+                    <div class="garden">
+                        <a href="">Créez votre jardin et bénéficiez d'un calendrier adapté à votre région.</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <div class="products">
+                        <a href="">Sélectionnez vos fruits et légumes préférés.</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <div class="tricks">
+                        <a href=""><p>Découvrez nos cartes trucs et astuces pour vous aider.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="products-container">
+
+    <div class="cards-block">
+
+        <div class="card-product">
+            <img src="{% static 'myapp/images/produits/tomate.png' %}" alt="product-img">
+            <div class="title-product">Tomate
+                <hr>
+            </div>
+            <div class="tab-icons">
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-sun"></i></div>
+                    <span>3</span>
+                </div>
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+                    <span>3</span>
+                </div>
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <span>Eté</span>
+                </div>
+            </div>
+            <div class="info-card" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque vitae labore aperiam ipsam ipsum id dolorum facere ab vero.
+            </div>
+            <div class="btn-section">
+                <div class=false-button type="submit">Ajouter</div>
+            </div>
+        </div>
+
+        <div class="card-product">
+            <img src="{% static 'myapp/images/produits/fraise.png' %}" alt="product-img">
+            <div class="title-product">Fraise
+                <hr>
+            </div>
+            <div class="tab-icons">
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-sun"></i></div>
+                    <span>3</span>
+                </div>
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+                    <span>2</span>
+                </div>
+                <div class="tab">
+                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <span>Eté</span>
+                </div>
+            </div>
+            <div class="info-card" >Lorem ipsum consectetur adipisicing elit. Nulla eaque vitae labore aperiam ipsampsum dolor sit amet consectetur adipisicing elit. Nulla eaque vitae labore ipsum id dolorum facere ab vero.
+            </div>
+            <div class="btn-section">
+                <div class=false-button type="submit">Ajouter</div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="banner-info">
+            <h1>My_Products</h1>
+            <p>Lorem ipsum dolor sit amet consectetur esse neque maiores soluta
+                 soluta perspiciatis odit, eius ullam eos, iusto suscipit voluptatem perspiciatis odit, eius
+                ullam eos, iusto suscipit voluptatem  sit amet consectetur quasi.</p>
+        <a class="button" href="{% url 'myapp:products' %}">Produits</a>
+    </div>
+
+</section>
+
+
+<section class="tricks-container">
+
+    <div class="banner-info">
+            <h1>My_Tricks</h1>
+            <p>Lorem ipsum dolor sit amet consectetur esse neque maiores soluta perspiciatis odit, eius ullam eos, iusto suscipit voluptatem
+            quasi. A dolorum  necturn dolace los soluta perspiciatis odit, eius ullam eos, iusto suscipit voluptatem minima deleniti eno sipa tropy.</p>
+            <a class="button" href="{% url 'myapp:tricks' %}">Astuces</a>
+    </div>
+
+    <div class="cards-block">
+
+       <div class="card-trick">
+            <img class="img-trick" src="{% static 'myapp/images/astuces/piquage_tomate.png' %}" alt="trick-img">
+                <div class="header-trick">
+                    <div class="product-trick">Tomate</div>
+                    <div class="title-trick"> Comment piquer ses tomates
+                    <hr>
+                    </div>
+                </div>
+                <div class="info-trick" >Lorem epsum libra res adipisci consectetur a? Dolores odio quis iusto totam dolore sint deleniti rem, animi s
+            equi aliquid et illum hic impedit blanditiis eaque. Sunt sequi vero neque quia qui in consequuntur
+            ipsa harum, ipsam reiciendis numquam quae expedita vitae illo iusto
+            </div>
+            <div class="btn-section">
+                <div class="false-button" type="submit">Ajouter</div>
+            </div>
+
+        </div>
+
+         <div class="card-trick">
+            <img class="img-trick" src="{% static 'myapp/images/astuces/marc_cafe.png' %}" alt="trick-img">
+                <div class="header-trick">
+                    <div class="product-trick">Divers</div>
+                    <div class="title-trick"> De l'engrais avec son marc de café
+                    <hr>
+                    </div>
+                </div>
+                <div class="info-trick" >Maiores adipisci consectetur a? Dolores odio quis iusto totam dolore sint deleniti rem, animi s
+            equi aliquid et illum hic impedit blanditiis eaque. Sunt sequi vero neque quia qui in consequuntur
+            ipsa harum, ipsam reiciendis numquam quae expedita vitae illo iusto
+            </div>
+            <div class="btn-section">
+                <div class=false-button type="submit">Ajouter</div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+</section>
+
+
+{% endblock content %}
