@@ -26,8 +26,6 @@ Python, Django, PostgreSql, Html, Vanilla Js, pure css.
 
 ![](https://github.com/romainniamor/django_my_garden/blob/master/my_garden_project/my_garden_project/screens/screen6.png)
 
-![](https://github.com/romainniamor/django_my_garden/blob/master/my_garden_project/my_garden_project/screens/screen7.png)
-
 ![](https://github.com/romainniamor/django_my_garden/blob/master/my_garden_project/my_garden_project/screens/screen8.png)
 
 ![](https://github.com/romainniamor/django_my_garden/blob/master/my_garden_project/my_garden_project/screens/screen9.png)
