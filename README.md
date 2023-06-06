@@ -1,13 +1,13 @@
 # My_Garden
 
-Web application providing information on gardening (species and tricks), according to your location.
+Web application providing informations on gardening (species and tricks), according to your location.
 
-authentification, reset password, lost email, admin interface, selection, filtering...
+authentification, reset password, lost email, admin interface, selection, filtering, annual calendar display, all responsive ...
 
 
 
 ## 🛠 Skills
-Python, Django, PostgreSql, Html, Vanilla Js, pure css.
+Python, Django, PostgreSql, Html, Vanilla Js, css.
 
 
 ## Screenshots
